@@ -6,7 +6,7 @@ using ProjectTourism.ClassDTO;
 using ProjectTourism.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.WebHost.UseUrls("http://0.0.0.0:" + (Environment.GetEnvironmentVariable("PORT") ?? "5000"));
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -43,3 +43,4 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
