@@ -6,7 +6,7 @@ namespace ProjectTourism.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class ReviewsConrtoller : ControllerBase
+    public class ReviewsController : ControllerBase
     {
         private readonly IReviews Review;
         public ReviewsConrtoller(IReviews Review)
@@ -52,3 +52,4 @@ namespace ProjectTourism.Controllers
 
 
 }
+
