@@ -9,7 +9,7 @@ namespace ProjectTourism.Controllers
     public class ReviewsController : ControllerBase
     {
         private readonly IReviews Review;
-        public ReviewsConrtoller(IReviews Review)
+        public ReviewsController(IReviews Review)
         {
             this.Review = Review;
 
@@ -52,4 +52,5 @@ namespace ProjectTourism.Controllers
 
 
 }
+
 
