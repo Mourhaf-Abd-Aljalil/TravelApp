@@ -44,6 +44,7 @@ if (app.Environment.IsDevelopment())
 app.UseAuthorization();
 
 app.MapControllers();
-app.MapGet("/", () => " API is running on Railway!");
+//app.MapGet("/", () => " API is running on Railway!");
 app.Run();
+
 
