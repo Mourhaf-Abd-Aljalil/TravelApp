@@ -6,9 +6,10 @@ using ProjectTourism.ClassDTO;
 using ProjectTourism.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
+//builder.WebHost.UseUrls("http://0.0.0.0:" + (Environment.GetEnvironmentVariable("PORT") ?? "5000"));
 builder.WebHost.UseUrls("http://0.0.0.0:" + (Environment.GetEnvironmentVariable("PORT") ?? "5000"));
-// Add services to the container.
 
+// Add services to the container
 builder.Services.AddControllers();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
@@ -29,16 +30,19 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+// Configure the HTTP request pipeline.
     app.UseSwagger();
     app.UseSwaggerUI();
 
+//var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
+//app.Urls.Add($"http://*:{port}");
 
-app.UseHttpsRedirection();
-
+if (app.Environment.IsDevelopment())
+{
+    app.UseHttpsRedirection();
+}
 app.UseAuthorization();
 
 app.MapControllers();
-
+//app.MapGet("/", () => " API is running on Railway!");
 app.Run();
-
-
